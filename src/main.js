@@ -1,13 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
-import * as firebase from "firebase/app";
-import 'firebase/installations';
+import Vue from "vue";
+import App from "./App.vue";
+import firebase from "firebase/app";
+import "firebase/installations";
+import "firebase/analytics";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
 
 var firebaseConfig = {
   apiKey: "AIzaSyD6kGS6BJyC1zNRIYgvBYM8_pmeAPvoSt8",
@@ -17,8 +18,9 @@ var firebaseConfig = {
   storageBucket: "fis-test-app.appspot.com",
   messagingSenderId: "888660023682",
   appId: "1:888660023682:web:7e855e6e4d94a92f67179b",
-  measurementId: "G-D0RZ9QG5EB"
+  measurementId: "G-D0RZ9QG5EB",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 window.installations = firebase.installations();
+firebase.analytics();
